@@ -1,3 +1,6 @@
 [submodule "favorite-beer"]
 	path = favorite-beer
 	url = https://github.com/jtmackoy/favorite-beer.git
+[submodule "microsoft-aks-days"]
+	path = microsoft-aks-days
+	url = https://github.com/redapt/microsoft-aks-days.git
