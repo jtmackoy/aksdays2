@@ -39,35 +39,46 @@ Schedule Jobs
 Think for jobs like indexing periodically throughout the day
 ### Services
 #### ClusterIP
-      Creates internal IP address, pulling from overlay network
-    NodePort
-      Creates internal IP through overlay, but also an open node point on every node within the cluster
-      Can then setup a load balancer to each node port
-    LoadBalancer
-      Usually used in a provider landscape
-      Creates the node port *and* a load balancer in the cloud platform
-  Ingress Controller
-    Interface kubernets creates that allows 3rd parties to integrate
-    Ingress
-      nginx, haproxy, traffic, istio versions of these are all available
-      Allows for things like URL (host) direction to backend services/service ports
-  Configmaps
-    Allows for multiple pods to use a similar configuration - like an environment variable
-    Changing values in a configmap doesn't mean the pod will automatically have that data or that the pod will be restarted
-  Secrets
-    Similar to configmaps - can mount in environment variables, filesystem
-    Is base64 encoded
-    Will allow for things like SPN ID, Tennant ID, etc. to allow a SPN to authenticate against keyvault
-    Allows RBAC on API and Namespace, Configmaps are just on the API
-    Can inject binary files (because they are base64 encoded)
-      Java trust store certificate, for example
-  Volumes
-    Persistent Volumes
-      Facilitates the creation (and mounting) or just mounting of an existing disk in AZ
-  Network Policy
-    Firewall rules in the cluster
-    Will leverage CNI you've implemented to create network isolation
-Benefits of Containers
+Creates internal IP address, pulling from overlay network
+#### NodePort
+Creates internal IP through overlay, but also an open node point on every node within the cluster
+
+Can then setup a load balancer to each node port
+#### LoadBalancer
+Usually used in a provider landscape
+
+Creates the node port *and* a load balancer in the cloud platform
+### Ingress Controller
+Interface kubernets creates that allows 3rd parties to integrate
+#### Ingress
+nginx, haproxy, traffic, istio versions of these are all available
+
+Allows for things like URL (host) direction to backend services/service ports
+### Configmaps
+
+Allows for multiple pods to use a similar configuration - like an environment variable
+
+Changing values in a configmap doesn't mean the pod will automatically have that data or that the pod will be restarted
+### Secrets
+Similar to configmaps - can mount in environment variables, filesystem
+
+Is base64 encoded
+
+Will allow for things like SPN ID, Tennant ID, etc. to allow a SPN to authenticate against keyvault
+
+Allows RBAC on API and Namespace, Configmaps are just on the API
+
+Can inject binary files (because they are base64 encoded)
+- Java trust store certificate, for example
+
+### Volumes
+#### Persistent Volumes
+Facilitates the creation (and mounting) or just mounting of an existing disk in AZ
+### Network Policy
+Firewall rules in the cluster
+
+Will leverage CNI you've implemented to create network isolation
+## Benefits of Containers
   Think framework like Java that enables lightweight and secure portability of application working environment
 ## Docker Directives
 ### ENV
