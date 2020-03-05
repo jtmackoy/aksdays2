@@ -1,0 +1,3 @@
+[submodule "favorite-beer"]
+	path = favorite-beer
+	url = https://github.com/jtmackoy/favorite-beer.git
